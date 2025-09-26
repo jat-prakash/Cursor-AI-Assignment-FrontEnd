@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node -e \"require('esbuild').serve({servedir:'.', port:3000}, {entryPoints:['src/index.js'], bundle:true, outfile:'bundle.js', loader:{'.js':'jsx','.jsx':'jsx'}}).then(()=>console.log('Dev server: http://localhost:3000'))\"",
+    "build": "esbuild src/index.js --bundle --outfile=bundle.js --loader:.js=jsx --loader:.jsx=jsx"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.54"
+  }
+}
